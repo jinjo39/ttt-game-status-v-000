@@ -21,3 +21,9 @@ def won?(board)
     position_taken?(board, combo[0])
   end
 end
+
+def full?(board)
+  board.all? do |spot|
+    spot == "X" || spot == "O"
+  end
+end
