@@ -16,5 +16,9 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   x_combo = board.select{|i| i == "X"}
-  WIN_COMBINATIONS.select{|combo| combo == x_combo }
+  if WIN_COMBINATIONS.select{|combo| combo == x_combo }
+    true
+  else
+    falsey
+  end
 end
