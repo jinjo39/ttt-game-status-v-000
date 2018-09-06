@@ -13,3 +13,8 @@ WIN_COMBINATIONS = [
   [0,4,8],
   [2,4,6]
 ]
+
+def won?(board)
+  x_combo = board.select{|i| i == "X"}
+  WIN_COMBINATIONS.select{|combo| combo == x_combo }
+end
