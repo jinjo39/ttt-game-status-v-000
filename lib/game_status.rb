@@ -19,6 +19,6 @@ def won?(board)
   if WIN_COMBINATIONS.select{|combo| combo == x_combo }
     true
   else
-    falsey
+    false
   end
 end
