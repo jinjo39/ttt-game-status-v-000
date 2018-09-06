@@ -15,14 +15,9 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  x_combo = board.select{|i| i == "X"}
-  o_combo = board.select{|i| i == "O"}
-  if WIN_COMBINATIONS.select{|combo| combo == x_combo}
-    x_combo
-  elsif WIN_COMBINATIONS.select{|combo| combo == o_combo}
-    o_combo
-  else
-    return false
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
   end
-
 end
